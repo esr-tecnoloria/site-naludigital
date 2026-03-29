@@ -1,312 +1,267 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nalu Digital - Criação de apps, bots, IA e sites. Soluções digitais inovadoras para transformar seu negócio.">
-    <title>Nalu Digital - Apps, Bots, IA e Sites</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description"
+        content="Nalu Digital - Criação de apps, bots, IA e sites. Soluções digitais inovadoras para transformar seu negócio.">
+    <title>Nalu Digital - Em Desenvolvimento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FFFFFF;
+            color: #4A5568;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Hero - Logo grande + "em desenvolvimento" */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, #F0F7FA 0%, #E0F2F7 50%, #F0F7FA 100%);
+            text-align: center;
+            min-height: 60vh;
+        }
+
+        .hero__logo {
+            max-width: 400px;
+            width: 80%;
+            height: auto;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #1A3B69, #2A7BA1);
+            color: #FFFFFF;
+            padding: 0.6rem 2rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero__title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1A3B69;
+            margin-bottom: 1rem;
+        }
+
+        .hero__subtitle {
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: #8A94A6;
+            max-width: 500px;
+        }
+
+        /* Contato Section */
+        .contato {
+            padding: 4rem 0 3rem;
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .section__header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .section__title {
+            font-size: 1.75rem;
+            color: #1A3B69;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section__subtitle {
+            color: #8A94A6;
+            font-size: 1rem;
+        }
+
+        .contato__content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contato__info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .contato__card {
+            background: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .contato__card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 59, 105, 0.15);
+        }
+
+        .contato__icon {
+            width: 50px;
+            height: 50px;
+            background: #1A3B69;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            margin: 0 auto 1rem;
+        }
+
+        .contato__card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: #1A3B69;
+            font-weight: 600;
+        }
+
+        .contato__card p {
+            color: #4A5568;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A3B69;
+            color: #FFFFFF;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .hero__logo {
+                max-width: 280px;
+            }
+
+            .hero__title {
+                font-size: 1.5rem;
+            }
+
+            .hero__subtitle {
+                font-size: 1rem;
+            }
+
+            .contato__info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <a href="#home" class="logo__link">
-                    <img src="imagem/logo_nalu.png" alt="Nalu Digital" class="logo__image">
-                </a>
-            </div>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#servicos" class="nav__link">Serviços</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#sobre" class="nav__link">Sobre</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contato" class="nav__link">Contato</a>
-                    </li>
-                </ul>
-                <div class="nav__close" id="nav-close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </div>
-            </div>
-            <div class="nav__toggle" id="nav-toggle">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </div>
-        </nav>
-    </header>
+    <!-- Hero -->
+    <section class="hero">
+        <img src="imagem/nalu_logo.png" alt="Nalu Digital" class="hero__logo">
+        <span class="hero__badge">Em Desenvolvimento</span>
+        <!-- <h1 class="hero__title">Estamos preparando algo novo</h1> -->
+        <p class="hero__subtitle">Nosso novo site está em construção. Em breve, uma experiência digital completa para
+            você.</p>
+    </section>
 
-    <!-- Main -->
-    <main class="main">
-        <!-- Home Section -->
-        <section class="home section" id="home">
-            <div class="home__container container">
-                <div class="home__content">
-                    <h1 class="home__title">
-                        Soluções Digitais que <span class="highlight">Transformam</span> seu Negócio
-                    </h1>
-                    <p class="home__description">
-                        Criamos apps, bots, IA e sites personalizados que impulsionam sua empresa para o futuro digital. 
-                        Tecnologia de ponta com resultados reais.
-                    </p>
-                    <div class="home__buttons">
-                        <a href="#contato" class="button button--primary">Falar com Especialista</a>
-                        <a href="#servicos" class="button button--secondary">Nossos Serviços</a>
-                    </div>
-                    <div class="home__stats">
-                        <div class="stat">
-                            <span class="stat__number">100%</span>
-                            <span class="stat__label">Personalizado</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__number">24/7</span>
-                            <span class="stat__label">Suporte</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__number">+50</span>
-                            <span class="stat__label">Projetos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="home__image">
-                    <img src="imagem/img_home.png" alt="Nalu Digital - Soluções Digitais" class="home__img">
-                </div>
+    <!-- Contato Section -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Entre em Contato</h2>
+                <p class="section__subtitle">
+                    Pronto para transformar seu negócio? Vamos conversar!
+                </p>
             </div>
-        </section>
-
-        <!-- Serviços Section -->
-        <section class="servicos section" id="servicos">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Nossos Serviços</h2>
-                    <p class="section__subtitle">
-                        Soluções completas em tecnologia digital para impulsionar seu negócio
-                    </p>
-                </div>
-                <div class="servicos__grid">
-                    <div class="servico__card">
-                        <div class="servico__icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
+            <div class="contato__content">
+                <div class="contato__info">
+                    <div class="contato__card">
+                        <div class="contato__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </div>
-                        <h3 class="servico__title">Aplicativos</h3>
-                        <p class="servico__description">
-                            Desenvolvimento de apps nativos e multiplataforma para iOS e Android. 
-                            Soluções personalizadas que atendem às necessidades específicas do seu negócio.
-                        </p>
-                        <ul class="servico__features">
-                            <li>Apps iOS e Android</li>
-                            <li>Design intuitivo e moderno</li>
-                            <li>Integração com APIs</li>
-                            <li>Manutenção e suporte</li>
-                        </ul>
+                        <h3>E-mail</h3>
+                        <p>luoadebreu@gmail.com</p>
                     </div>
-
-                    <div class="servico__card">
-                        <div class="servico__icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    <div class="contato__card">
+                        <div class="contato__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
                             </svg>
                         </div>
-                        <h3 class="servico__title">Bots Inteligentes</h3>
-                        <p class="servico__description">
-                            Chatbots e automações que atendem seus clientes 24/7. 
-                            Reduza custos e melhore a experiência do cliente com inteligência artificial.
-                        </p>
-                        <ul class="servico__features">
-                            <li>Chatbots para WhatsApp</li>
-                            <li>Atendimento automatizado</li>
-                            <li>Integração com CRM</li>
-                            <li>Aprendizado contínuo</li>
-                        </ul>
+                        <h3>Telefone</h3>
+                        <p>11 94303-3112</p>
                     </div>
-
-                    <div class="servico__card">
-                        <div class="servico__icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
+                    <div class="contato__card">
+                        <div class="contato__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
                             </svg>
                         </div>
-                        <h3 class="servico__title">Inteligência Artificial</h3>
-                        <p class="servico__description">
-                            Implementação de soluções de IA para otimizar processos, 
-                            analisar dados e tomar decisões inteligentes que geram resultados.
-                        </p>
-                        <ul class="servico__features">
-                            <li>Análise preditiva</li>
-                            <li>Processamento de linguagem</li>
-                            <li>Visão computacional</li>
-                            <li>Automação inteligente</li>
-                        </ul>
-                    </div>
-
-                    <div class="servico__card">
-                        <div class="servico__icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3 class="servico__title">Sites Modernos</h3>
-                        <p class="servico__description">
-                            Criação de websites responsivos, rápidos e otimizados para conversão. 
-                            Design moderno que representa sua marca e gera resultados.
-                        </p>
-                        <ul class="servico__features">
-                            <li>Design responsivo</li>
-                            <li>SEO otimizado</li>
-                            <li>Alta performance</li>
-                            <li>Integração completa</li>
-                        </ul>
+                        <h3>Localização</h3>
+                        <p>Indaiatuba-SP</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Sobre Section -->
-        <section class="sobre section" id="sobre">
-            <div class="container">
-                <div class="sobre__content">
-                    <div class="sobre__text">
-                        <h2 class="section__title">Sobre a Nalu Digital</h2>
-                        <p class="sobre__description">
-                            Somos uma empresa especializada em soluções digitais inovadoras. 
-                            Combinamos tecnologia de ponta com criatividade para criar apps, bots, 
-                            sistemas de IA e sites que realmente fazem a diferença no seu negócio.
-                        </p>
-                        <p class="sobre__description">
-                            Nossa missão é transformar ideias em realidade digital, oferecendo 
-                            soluções personalizadas que impulsionam o crescimento e a eficiência 
-                            das empresas. Trabalhamos com foco em resultados e excelência.
-                        </p>
-                        <div class="sobre__values">
-                            <div class="value">
-                                <h4>Inovação</h4>
-                                <p>Tecnologias mais recentes do mercado</p>
-                            </div>
-                            <div class="value">
-                                <h4>Qualidade</h4>
-                                <p>Padrão de excelência em cada projeto</p>
-                            </div>
-                            <div class="value">
-                                <h4>Compromisso</h4>
-                                <p>Entrega dentro do prazo e orçamento</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contato Section -->
-        <section class="contato section" id="contato">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__title">Entre em Contato</h2>
-                    <p class="section__subtitle">
-                        Pronto para transformar seu negócio? Vamos conversar!
-                    </p>
-                </div>
-                <div class="contato__content">
-                    <div class="contato__info">
-                        <div class="contato__card">
-                            <div class="contato__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </div>
-                            <h3>E-mail</h3>
-                            <p>luoadebreu@gmail.com</p>
-                        </div>
-                        <div class="contato__card">
-                            <div class="contato__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </div>
-                            <h3>Telefone</h3>
-                            <p>11 94303-3112</p>
-                        </div>
-                        <div class="contato__card">
-                            <div class="contato__icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </div>
-                            <h3>Localização</h3>
-                            <p>Indaiatuba-SP</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__content">
-                <div class="footer__brand">
-                    <h3>Nalu Digital</h3>
-                    <p>Soluções digitais inovadoras para transformar seu negócio.</p>
-                </div>
-                <div class="footer__links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer__services">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="#servicos">Aplicativos</a></li>
-                        <li><a href="#servicos">Bots</a></li>
-                        <li><a href="#servicos">Inteligência Artificial</a></li>
-                        <li><a href="#servicos">Sites</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2025 Nalu Digital. Todos os direitos reservados.</p>
-            </div>
+            <p>&copy; 2026 Nalu Digital.</p>
         </div>
     </footer>
-
-    <!-- Scroll Top -->
-    <a href="#" class="scrolltop" id="scroll-top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </a>
-
-    <script src="main.js"></script>
 </body>
+
 </html>
-
-
